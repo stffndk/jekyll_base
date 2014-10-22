@@ -1,0 +1,76 @@
+//*************************//
+//     MIXINS
+//     Define Mixins
+//     Most are from: https://github.com/twbs/bootstrap-sass/tree/master/assets/stylesheets/bootstrap/mixins
+//
+//*************************//
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+          box-shadow: $shadow;
+}
+
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: #{alpha(opacity=$opacity-ie)};
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+@mixin pseudo($size: 10px) {
+  content: "";
+  display: block;
+  height: $size;
+  position: absolute;
+  width: $size;
+}
+
+
+@mixin breakpoint($point) {
+  @if $point == xtra-small {
+    @media (max-width: $screen-xtra-small) {
+      @content;
+    }
+  }
+  @else if $point == medium {
+    @media (min-width: $screen-xtra-small) and ($screen-small) {
+      @content;
+    }
+  }
+  @else if $point == large {
+    @media (min-width: $screen-large) {
+      @content;
+    }
+  }
+}

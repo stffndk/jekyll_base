@@ -1,0 +1,21 @@
+# Site settings
+encoding: "utf-8"
+title: Jekyll starter!
+email: post@stffn.dk
+description: Description for your awesome site
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://stffn.dk" # the base hostname & protocol for your site
+twitter_username: stffndk
+github_username:  stffndk
+google_analytics_id: ""
+
+# Build settings
+markdown: kramdown
+permalink: /:categories/:title
+paginate: 10
+
+# SASS specific
+sass:
+  style: :compressed
+
+# Many more settings: http://jekyllrb.com/docs/configuration/
