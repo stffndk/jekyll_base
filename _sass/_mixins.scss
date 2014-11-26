@@ -1,20 +1,8 @@
 //*************************//
 //     MIXINS
 //     Define Mixins
-//     Most are from: https://github.com/twbs/bootstrap-sass/tree/master/assets/stylesheets/bootstrap/mixins
 //
 //*************************//
-
-@mixin box-shadow($shadow...) {
-  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
-          box-shadow: $shadow;
-}
-
-@mixin box-sizing($boxmodel) {
-  -webkit-box-sizing: $boxmodel;
-     -moz-box-sizing: $boxmodel;
-          box-sizing: $boxmodel;
-}
 
 @mixin clearfix() {
   &:before,
@@ -32,20 +20,6 @@
   // IE8 filter
   $opacity-ie: ($opacity * 100);
   filter: #{alpha(opacity=$opacity-ie)};
-}
-
-@mixin rotate($degrees) {
-  -webkit-transform: rotate($degrees);
-      -ms-transform: rotate($degrees);
-       -o-transform: rotate($degrees);
-          transform: rotate($degrees);
-}
-
-@mixin rotate($degrees) {
-  -webkit-transform: rotate($degrees);
-      -ms-transform: rotate($degrees);
-       -o-transform: rotate($degrees);
-          transform: rotate($degrees);
 }
 
 @mixin pseudo($size: 10px) {
